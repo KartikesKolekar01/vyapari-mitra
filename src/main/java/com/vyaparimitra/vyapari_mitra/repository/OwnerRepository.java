@@ -1,0 +1,18 @@
+package com.vyaparimitra.vyapari_mitra.repository;
+
+
+import com.vyaparimitra.vyapari_mitra.model.Owner;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface OwnerRepository extends JpaRepository<Owner, Long>
+{
+
+    // Find owner by mobile number
+    Optional<Owner> findByMobile(String mobile);
+
+    // Check if owner exists by mobile
+    boolean existsByMobile(String mobile);
+}
